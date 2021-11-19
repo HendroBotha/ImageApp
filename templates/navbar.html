@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'photo:list' %}">Photo App</a>
+      <a class="navbar-brand" href="{% url 'photo:list' %}">Pic Bean</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -28,9 +28,13 @@
           {% else %}
   
           <li class="nav-item">
-            <a href="{% url 'user:login' %}" class="btn btn-sm btn-danger"
+            <a href="{% url 'user:login' %}" class="btn btn-primary btn-success"
               >Sign In</a
             >
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'user:signup' %}" class="btn btn-secondary btn-danger"
+            >Register</a>
           </li>
           {% endif %}
         </ul>
