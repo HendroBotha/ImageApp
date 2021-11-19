@@ -12,6 +12,7 @@ from .models import Photo
 
 
 class PhotoListView(ListView):
+
     model = Photo
 
     template_name = 'image_app/list.html'
@@ -20,6 +21,7 @@ class PhotoListView(ListView):
 
 
 class PhotoTagListView(PhotoListView):
+
     template_name = 'image_app/taglist.html'
 
     # Custom function
@@ -36,6 +38,7 @@ class PhotoTagListView(PhotoListView):
 
 
 class PhotoDetailView(DetailView):
+
     model = Photo
 
     template_name = 'image_app/detail.html'
@@ -44,6 +47,7 @@ class PhotoDetailView(DetailView):
 
 
 class PhotoCreateView(LoginRequiredMixin, CreateView):
+
     model = Photo
 
     fields = ['geolocation', 'image', 'submitter', 'tags']
@@ -73,6 +77,7 @@ class UserIsSubmitter(UserPassesTestMixin):
 
 
 class PhotoUpdateView(UserIsSubmitter, UpdateView):
+
     template_name = 'image_app/update.html'
 
     model = Photo
@@ -83,6 +88,7 @@ class PhotoUpdateView(UserIsSubmitter, UpdateView):
 
 
 class PhotoDeleteView(UserIsSubmitter, DeleteView):
+
     template_name = 'image_app/delete.html'
 
     model = Photo
